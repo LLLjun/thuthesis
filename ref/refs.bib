@@ -330,3 +330,296 @@
   year       = {1983},
   medium     = {DK},
 }
+
+% This paper
+
+@online{nns-wiki,
+  author     = {Wikipedia},
+  title      = {Nearest neighbor search},
+  urldate    = {2023-03-19},
+  url        = {https://en.wikipedia.org/wiki/Nearest_neighbor_search},
+}
+
+% 相关工作
+% PQ-based
+@article{pq-2010,
+  title={Product quantization for nearest neighbor search},
+  author={Jegou, Herve and Douze, Matthijs and Schmid, Cordelia},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={33},
+  number={1},
+  pages={117--128},
+  year={2010},
+  publisher={IEEE}
+}
+@inproceedings{opq-2013,
+  title={Optimized product quantization for approximate nearest neighbor search},
+  author={Ge, Tiezheng and He, Kaiming and Ke, Qifa and Sun, Jian},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={2946--2953},
+  year={2013}
+}
+@inproceedings{douze2016polysemous,
+  title={Polysemous codes},
+  author={Douze, Matthijs and J{\'e}gou, Herv{\'e} and Perronnin, Florent},
+  booktitle={European Conference on Computer Vision},
+  pages={785--801},
+  year={2016},
+  organization={Springer}
+}
+@inproceedings{zhang2019grip,
+  title={Grip: Multi-store capacity-optimized high-performance nearest neighbor search for vector search engine},
+  author={Zhang, Minjia and He, Yuxiong},
+  booktitle={Proceedings of the 28th ACM International Conference on Information and Knowledge Management},
+  pages={1673--1682},
+  year={2019}
+}
+@inproceedings{kalantidis2014locally,
+  title={Locally optimized product quantization for approximate nearest neighbor search},
+  author={Kalantidis, Yannis and Avrithis, Yannis},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={2321--2328},
+  year={2014}
+}
+@inproceedings{abdelhadi2019accelerated,
+  title={Accelerated Approximate Nearest Neighbors Search Through Hierarchical Product Quantization},
+  author={Abdelhadi, Ameer MS and Bouganis, Christos-Savvas and Constantinides, George A},
+  booktitle={2019 International Conference on Field-Programmable Technology (ICFPT)},
+  pages={90--98},
+  year={2019},
+  organization={IEEE}
+}
+% tree-based
+@inproceedings{kdtree-2008,
+  title={Optimised KD-trees for fast image descriptor matching},
+  author={Silpa-Anan, Chanop and Hartley, Richard},
+  booktitle={2008 IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={1--8},
+  year={2008},
+  organization={IEEE}
+}
+@online{Annoy,
+  author     = {Erik Bernhardsson},
+  title      = {Annoy},
+  urldate    = {2023-03-29},
+  url        = {https://github.com/spotify/annoy},
+}
+@article{houle2014rank,
+  title={Rank-based similarity search: Reducing the dimensional dependence},
+  author={Houle, Michael E and Nett, Michael},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={37},
+  number={1},
+  pages={136--150},
+  year={2014},
+  publisher={IEEE}
+}
+@article{arora2018hd,
+  title={Hd-index: Pushing the scalability-accuracy boundary for approximate knn search in high-dimensional spaces},
+  author={Arora, Akhil and Sinha, Sakshi and Kumar, Piyush and Bhattacharya, Arnab},
+  journal={arXiv preprint arXiv:1804.06829},
+  year={2018}
+}
+@article{muja2014scalable,
+  title={Scalable nearest neighbor algorithms for high dimensional data},
+  author={Muja, Marius and Lowe, David G},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={36},
+  number={11},
+  pages={2227--2240},
+  year={2014},
+  publisher={IEEE}
+}
+@article{wang2013trinary,
+  title={Trinary-projection trees for approximate nearest neighbor search},
+  author={Wang, Jingdong and Wang, Naiyan and Jia, You and Li, Jian and Zeng, Gang and Zha, Hongbin and Hua, Xian-Sheng},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={36},
+  number={2},
+  pages={388--403},
+  year={2013},
+  publisher={IEEE}
+}
+@inproceedings{AQA-1998,
+  title={A Quantitative Analysis and Performance Study for Similarity-Search Methods in High-Dimensional Spaces},
+  author={Roger Weber and Hans-J{\"o}rg Schek and Stephen Blott},
+  booktitle={Very Large Data Bases Conference},
+  year={1998}
+}
+% LSH-based
+% todo
+@article{lsh-1999,
+  title={Similarity search in high dimensions via hashing},
+  author={Gionis, Aristides and Indyk, Piotr and Motwani, Rajeev and others},
+  booktitle={Vldb},
+  volume={99},
+  number={6},
+  pages={518--529},
+  year={1999}
+}
+@article{lsh-2004,
+  title={Locality-sensitive hashing scheme based on p-stable distributions},
+  author={Datar, Mayur and Immorlica, Nicole and Indyk, Piotr and Mirrokni, Vahab S},
+  booktitle={Proceedings of the twentieth annual symposium on Computational geometry},
+  pages={253--262},
+  year={2004}
+}
+@inproceedings{terasawa2007spherical,
+  title={Spherical LSH for approximate nearest neighbor search on unit hypersphere},
+  author={Terasawa, Kengo and Tanaka, Yuzuru},
+  booktitle={Workshop on Algorithms and Data Structures},
+  pages={27--38},
+  year={2007},
+  organization={Springer}
+}
+@article{liu2014sk,
+  title={SK-LSH: an efficient index structure for approximate nearest neighbor search},
+  author={Liu, Yingfan and Cui, Jiangtao and Huang, Zi and Li, Hui and Shen, Heng Tao},
+  journal={Proceedings of the VLDB Endowment},
+  volume={7},
+  number={9},
+  pages={745--756},
+  year={2014},
+  publisher={VLDB Endowment}
+}
+@article{sh-2008,
+  title={Spectral hashing},
+  author={Weiss, Yair and Torralba, Antonio and Fergus, Rob},
+  journal={Advances in neural information processing systems},
+  volume={21},
+  year={2008}
+}
+@article{sun2014srs,
+  title={SRS: solving c-approximate nearest neighbor queries in high dimensional euclidean space with a tiny index},
+  author={Sun, Yifang and Wang, Wei and Qin, Jianbin and Zhang, Ying and Lin, Xuemin},
+  journal={Proceedings of the VLDB Endowment},
+  year={2014}
+}
+% graph-based
+@inproceedings{kgraph-2011,
+  title={Efficient k-nearest neighbor graph construction for generic similarity measures},
+  author={Dong, Wei and Moses, Charikar and Li, Kai},
+  booktitle={Proceedings of the 20th international conference on World wide web},
+  pages={577--586},
+  year={2011}
+}
+@article{nsw-2014,
+  title={Approximate nearest neighbor algorithm based on navigable small world graphs},
+  author={Malkov, Yury and Ponomarenko, Alexander and Logvinov, Andrey and Krylov, Vladimir},
+  journal={Information Systems},
+  volume={45},
+  pages={61--68},
+  year={2014},
+  publisher={Elsevier}
+}
+@article{hnsw-2018,
+  title={Efficient and robust approximate nearest neighbor search using hierarchical navigable small world graphs},
+  author={Malkov, Yu A and Yashunin, Dmitry A},
+  journal={IEEE transactions on pattern analysis and machine intelligence},
+  volume={42},
+  number={4},
+  pages={824--836},
+  year={2018},
+  publisher={IEEE}
+}
+@article{rng-1980,
+  title={The relative neighbourhood graph of a finite planar set},
+  author={Toussaint, Godfried T},
+  journal={Pattern recognition},
+  volume={12},
+  number={4},
+  pages={261--268},
+  year={1980},
+  publisher={Elsevier}
+}
+@article{nsg-2019,
+  title={Fast approximate nearest neighbor search with the navigating spreading-out graph},
+  author={Fu, Cong and Xiang, Chao and Wang, Changxu and Cai, Deng},
+  journal={Proceedings of the VLDB Endowment},
+  volume={12},
+  number={5},
+  pages={461--474},
+  year={2019},
+  publisher={VLDB Endowment}
+}
+@article{dpg-2019,
+  title={Approximate nearest neighbor search on high dimensional data—experiments, analyses, and improvement},
+  author={Li, Wen and Zhang, Ying and Sun, Yifang and Wang, Wei and Li, Mingjie and Zhang, Wenjie and Lin, Xuemin},
+  journal={IEEE Transactions on Knowledge and Data Engineering},
+  volume={32},
+  number={8},
+  pages={1475--1488},
+  year={2019},
+  publisher={IEEE}
+}
+@article{ganns-survey-2021,
+  title={A comprehensive survey and experimental comparison of graph-based approximate nearest neighbor search},
+  author={Wang, Mengzhao and Xu, Xiaoliang and Yue, Qiang and Wang, Yuxiang},
+  journal={Proceedings of the VLDB Endowment},
+  volume={14},
+  number={11},
+  pages={1964--1978},
+  year={2021},
+  publisher={VLDB Endowment}
+}
+
+
+% Benchmark
+
+
+% background-dist
+@article{dokmanic2015euclidean,
+  title={Euclidean distance matrices: essential theory, algorithms, and applications},
+  author={Dokmanic, Ivan and Parhizkar, Reza and Ranieri, Juri and Vetterli, Martin},
+  journal={IEEE Signal Processing Magazine},
+  volume={32},
+  number={6},
+  pages={12--30},
+  year={2015},
+  publisher={IEEE}
+}
+@article{critchley1988certain,
+  title={On certain linear mappings between inner-product and squared-distance matrices},
+  author={Critchley, Frank},
+  journal={Linear Algebra and its Applications},
+  volume={105},
+  pages={91--107},
+  year={1988},
+  publisher={Elsevier}
+}
+@inproceedings{zou2008shape,
+  title={Shape-based trademark retrieval using cosine distance method},
+  author={Zou, Bei-ji and Umugwaneza, Marie Providence},
+  booktitle={2008 Eighth International Conference on Intelligent Systems Design and Applications},
+  volume={2},
+  pages={498--504},
+  year={2008},
+  organization={IEEE}
+}
+@inproceedings{nguyen2010cosine,
+  title={Cosine similarity metric learning for face verification},
+  author={Nguyen, Hieu V and Bai, Li},
+  booktitle={Asian conference on computer vision},
+  pages={709--720},
+  year={2010},
+  organization={Springer}
+}
+
+% datasets
+% deep
+@inproceedings{deep-2016,
+  title={Efficient indexing of billion-scale datasets of deep descriptors},
+  author={Babenko, Artem and Lempitsky, Victor},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={2055--2063},
+  year={2016}
+}
+% turing
+@misc{billionanns,
+  author =       "Harsha Vardhan Simhadri and others",
+  year =         "2021",
+  month =        "",
+  title =        "Billion-Scale Approximate Nearest Neighbor Search Challenge",
+  lastaccessed = "Jan 9, 2022",
+  url =          "http://big-ann-benchmarks.com/"
+}

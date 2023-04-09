@@ -3,37 +3,25 @@
 % 中英文摘要和关键字
 
 \begin{abstract}
-  论文的摘要是对论文研究内容和成果的高度概括。
-  摘要应对论文所研究的问题及其研究目的进行描述，对研究方法和过程进行简单介绍，对研究成果和所得结论进行概括。
-  摘要应具有独立性和自明性，其内容应包含与论文全文同等量的主要信息。
-  使读者即使不阅读全文，通过摘要就能了解论文的总体内容和主要成果。
+  推荐系统目前被广泛使用到各类场景，例如电商、社交、广告等等。其中推荐系统的核心组件之一是近似近邻搜索算法，该算法的目的是从百万上亿的数据中检索与给定查询最相似的结果。其中基于图结构的近似近邻搜索算法在多个公开基准上的测试都优于其他类型的算法，而被广泛适用于推荐系统中，作为推荐系统的核心组件之一。本文以推荐系统作为近似近邻搜索的典型场景，开展面向\textbf{图结构推荐算法}和硬件架构的软硬件协同设计研究。随着大数据时代的快速到来，推荐系统所需要处理的数据量也急剧增长，图结构推荐算法在算法和硬件层面也都面临新的问题和挑战。因此，本文以推荐系统作为近似近邻搜索算法的典型场景，从算法、架构和系统三个层面开展面向图结构推荐算法和硬件架构的软硬件协同设计研究。
 
-  论文摘要的书写应力求精确、简明。
-  切忌写成对论文书写内容进行提要的形式，尤其要避免“第 1 章……；第 2 章……；……”这种或类似的陈述方式。
+  在算法层面，在各类近似近邻搜索算法中，尽管图结构推荐算法拥有出色的搜索性能，但是面临构建开销大和搜索时存在冗余的问题。本文针对这两个问题分别提出了构建时优化和搜算阶段的分析，指出冗余的原因是由于图结构中不同区域的连接关系不同所导致。
 
-  关键词是为了文献标引工作、用以表示全文主要内容信息的单词或术语。
-  关键词不超过 5 个，每个关键词中间用分号分隔。
+  在架构层面，图结构推荐算法在现有硬件架构上（如CPU和GPU）面临执行能效低下的问题。其核心原因是图结构引入大量的间接索引问题，导致现有的冯诺依曼这种存算分离的架构在数据传输的开销很大。因此本文提出了一种DRAM-SSD的层次化近存储处理架构，是一个针对图结构推荐算法所设计的高效硬件处理架构。
+
+  在系统层面，随着数据规模的增加，拓展性是一个必须要考虑的问题。由于节点间通信的昂贵开销，现有多机方案都采用节点间无通信的方案，但是这种方案受到图结构的影响导致很差的拓展性。因此，本文在系统层次进一步提出了可拓展的处理方案，并在FPGA上进行了功能验证，取得了超过近存储架构设计的性能。
 
   % 关键词用“英文逗号”分隔，输出时会自动处理为正确的分隔符
   \thusetup{
-    keywords = {关键词 1, 关键词 2, 关键词 3, 关键词 4, 关键词 5},
+    keywords = {推荐系统, 近似近邻搜索, 软硬件协同设计, 近存储计算},
   }
 \end{abstract}
 
 \begin{abstract*}
-  An abstract of a dissertation is a summary and extraction of research work and contributions.
-  Included in an abstract should be description of research topic and research objective, brief introduction to methodology and research process, and summary of conclusion and contributions of the research.
-  An abstract should be characterized by independence and clarity and carry identical information with the dissertation.
-  It should be such that the general idea and major contributions of the dissertation are conveyed without reading the dissertation.
-
-  An abstract should be concise and to the point.
-  It is a misunderstanding to make an abstract an outline of the dissertation and words “the first chapter”, “the second chapter” and the like should be avoided in the abstract.
-
-  Keywords are terms used in a dissertation for indexing, reflecting core information of the dissertation.
-  An abstract may contain a maximum of 5 keywords, with semi-colons used in between to separate one another.
+  TODO
 
   % Use comma as separator when inputting
   \thusetup{
-    keywords* = {keyword 1, keyword 2, keyword 3, keyword 4, keyword 5},
+    keywords* = {Recommendation system, approximate nearest neighbor search, software-hardware co-design, near-memory computing},
   }
 \end{abstract*}
