@@ -5,8 +5,7 @@
 
 
 \section{概述}\label{sec:galg-overview}
-尽管\ganns 方法相比其他类型的近似近邻搜索方法取得了成功，但其仍然存在诸多不足。\todo{补充一些过渡}
-\todo{更加说明本文采用的都是单层图}
+尽管\ganns 方法相比其他类型的近似近邻搜索方法取得了成功，但其仍然存在诸多不足。首先，基于图的近似近邻搜索方法通常需要通过建立图来表示数据集。但是，当数据集的分布较为分散时，图的连通性可能会变得较差。这样的话，搜索算法就可能会错过一些真正接近查询点的近邻点。此外，在高维数据的情况下，基于图的近似近邻搜索方法也可能会遇到所谓的“维数灾难”问题，随着数据维数的增加，类似HNSW算法的多层图结构的效果变得越来越差，基本与单层图无异，因此本文中采用的都是单层图。其次，基于图的近似近邻搜索方法在搜索过程中还存在一些冗余。具体来说，由于它是基于图的方法，每个点都会与周围的一些点建立联系。然而，这些联系并不一定都是有意义的，有些联系甚至可能会干扰搜索算法的正常工作。
 
 \subsection{图连通性差}
 在\ganns 方法中，查询点根据图上点之间的连接，以迭代的方式查找它的相似点。因此，图索引的连通性对于最终的搜索结果至关重要。具体来说，某一点的入度越大，能找到它的点越多（搜索精度越高）。某个点的出度越大，每一步的搜索代价越大（搜索速度越慢）。一些入度较小的点的存在意味着图索引的连通性较差。对于某个查询点来说，如果这些入度较小的点属于查询点的真值，但在搜索过程中没有找到，则会导致较低的召回率。
@@ -15,7 +14,7 @@
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/context-1/percent-in-degree.pdf}
-  \caption{具有不同入度的点，对召回率损失的累积贡献曲线\todo{左轴删掉？}}
+  \caption{具有不同入度的点，对召回率损失的累积贡献曲线}
   \label{fig:percent-in-degree}
 \end{figure}
 
@@ -83,25 +82,25 @@
 在完整图$G_N$中的点$x_c$的连通性很大程度上取决于$IF1_{x_c}$。同时，$IF1_{x_c}$与$OF1_{x_c}$之间存在着一种\textbf{制约关系}，即$IF1_{x_c} \leq OF1_{x_c}$。基于RNG的近邻选择策略尽管可以保持图上搜索\cite{hnsw-2018}的较高效率，但是忽略了对于这些入度较小点的关注。这导致了80.5\%的点$OF1$小于$maxM0$的2/5（如图~\ref{fig:if1-idg}(a)，因为$IF1$和$OF1$的分布几乎相同）。也就是说，$IF1_{x_c}$与$OF1_{x_c}$之间存在制约关系，最终导致图$G_N$的连通性差。
 
 \begin{algorithm}[tp]
-  \caption{Reverse connection enhancement algorithm}
+  \caption{反向连接增强算法}
   \label{alg:enhancement} 
   \begin{algorithmic}[1]
       \REQUIRE
-      Base vectors $X$, the number of maximum neighbors $maxM0$, starting point $p_s$
+      底库数据集 $X$, 最大邻居数 $maxM0$, 起始点 $p_s$
       \ENSURE
-      Complete graph index $G_N$
-      \FOR{each point $p_{in} \in X$}
-      \STATE $Q_{cand}^{in} \gets$ greedy search$（q,G_s,p_s,efc,efc）$
-      \STATE $Q_{sel}^{in} \gets$ SelectNeighborByRNG$（p_{in},Q_{cand}^{in},maxM0）$
-      \STATE $setNeighbor（p_{in}） \gets Q_{sel}^{in}$
+      图索引 $G_N$
+      \FOR{ $p_{in} \in X$}
+      \STATE $Q_{cand}^{in} \gets$ greedy search$(q,G_s,p_s,efc,efc)$
+      \STATE $Q_{sel}^{in} \gets$ SelectNeighborByRNG$(p_{in},Q_{cand}^{in},maxM0)$
+      \STATE $setNeighbor(p_{in}) \gets Q_{sel}^{in}$
       \STATE $Q_{add} \gets Q_{cand}^{in} \setminus Q_{sel}^{in}$
-      \FOR{each point $p_r \in Neighbor（p_{in}）$}
-      \STATE $addNeighbor（pr） \gets p_{in}$
+      \FOR{ $p_r \in Neighbor(p_{in})$}
+      \STATE $addNeighbor(pr) \gets p_{in}$
       \ENDFOR
       
-      \WHILE{$Indegree（p_{in}） < maxM0$}
+      \WHILE{$Indegree(p_{in}) < maxM0$}
       \STATE $p_r \gets Q_{add}$
-      \STATE $addNeighbor（pr） \gets p_{in}$
+      \STATE $addNeighbor(pr) \gets p_{in}$
       \ENDWHILE
       \ENDFOR
       \RETURN $G_N$
@@ -130,7 +129,7 @@
 图~\ref{fig:min-step}显示了查询向量的最小搜索步数的分布（在DEEP1M数据集上），水平轴和垂直轴分别对应两个不同的图索引。这两个图索引具有相同的基向量和参数，并且在构建过程中只改变插入点的顺序。我们发现对于相同的查询，其最小搜索步数之间有巨大的差异（例如，3到190）。
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.6\textwidth]{figures/context-1/min search step.pdf}
+  \includegraphics[width=0.9\textwidth]{figures/context-1/min search step.pdf}
   \caption{查询向量的最小搜索步数分布在两个不同的图索引中}
   \label{fig:min-step}
 \end{figure}
